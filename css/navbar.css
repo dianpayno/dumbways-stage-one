@@ -10,10 +10,7 @@
     position: fixed;
     top:0;
     left:0;
-    box-shadow: 0px 0px 1px rgba(0,0,0,0.7)
-
-   
-   
+    box-shadow: 0px 0px 1px rgba(0,0,0,0.7);
    
     
 }
@@ -52,6 +49,9 @@
     border-radius: 3px;
     cursor: pointer;
     transition: 0.5s all;
+    
+    
+
 }
 
 .contact-button-navbar:hover{
@@ -71,7 +71,7 @@
 }
 
 .left-section img{
-    width: 50px;
+    width: 40px;
 }
 
 

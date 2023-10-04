@@ -1,5 +1,6 @@
  const myProject = [];
 
+ 
 // let submit = document.querySelector(".submit-button");
 // submit.addEventListener('click', (event) =>{
 //     addMyProject(event);
@@ -23,9 +24,9 @@ function durationCount (start, end){
     days = daysTotal;
     months = inAmonth;
 
-    console.log(selisih);
-    console.log(daysTotal);
-    console.log(inAmonth);
+    // console.log(selisih);
+    // console.log(daysTotal);
+    // console.log(inAmonth);
    
 }
 
@@ -33,7 +34,7 @@ function durationCount (start, end){
 
 function addMyProject(event){
     event.preventDefault();
-
+    
     
     let projectName = document.getElementById("nama-project").value;
     let startDate = document.getElementById("start-date").value;
@@ -72,7 +73,7 @@ const myProjectObject = {
 }
 
     myProject.push(myProjectObject);
-     console.log(myProject);
+    //  console.log(myProject);
     renderMyProject ();
 
 };
@@ -94,25 +95,30 @@ const myProjectObject = {
                 <img src="./img/tech/${project.techProject[i]}.svg"></img>
                 `;
             };
-        // kondisi untuk menampilkan durasi
+        // kondisi untuk menampilkan format durasi
         let duration="";
             if(project.months === 0){
                 duration +=`
                 ${project.days} Days
                 `
-            } else if (project.months === 1){
+                    } 
+                else if (project.months === 1 && project.days === 1){
+                    duration += `
+                    ${project.months} Month ${project.days} Day
+                    `
+                } else if (project.months === 1){
                 duration += `
                 ${project.months} Month ${project.days} Days
                 `
-            } else{
-                duration += `
-                ${project.months} Months ${project.days} Days
-                `
-            }
-                
+                } else{
+                    duration += `
+                    ${project.months} Months ${project.days} Days
+                    `
+                }
+                    
 
         myProjectHTML += `
-                    <a href="01-project.html" target="blank">
+                    <a href="01-project.html">
                     <div class="card-project-1">
                     <div class="container-card-project">
                         <div class="card-project-img">
@@ -147,6 +153,9 @@ const myProjectObject = {
     };
 
     document.querySelector(".container-content").innerHTML = myProjectHTML;
+   
 };
+
+
 
 

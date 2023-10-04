@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color:#f0e7e2;
+    height:100%;
+    width:100p%;
+    display:flex;
+    justify-content:space-between;
+    padding-top:150px;
+    padding-right:50px;
+    padding-left:50px;
+    color:#3f4c52;
+     
+}
