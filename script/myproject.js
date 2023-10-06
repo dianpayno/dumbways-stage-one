@@ -51,6 +51,9 @@ function addMyProject(event){
             tech.push(techOption);   
         }  
       };
+
+      
+
      let imgProject = document.getElementById("input-blog-image").files;
     // script untuk mengubah file img jadi url
      imgProject = URL.createObjectURL(imgProject[0]);
@@ -95,6 +98,7 @@ const myProjectObject = {
                 <img src="./img/tech/${project.techProject[i]}.svg"></img>
                 `;
             };
+            
         // kondisi untuk menampilkan format durasi
         let duration="";
             if(project.months === 0){

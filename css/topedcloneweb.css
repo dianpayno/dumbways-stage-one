@@ -94,3 +94,33 @@ body{
     text-align:justify;
   
 }
+
+/* responsive */
+
+@media screen and (max-width : 768px){
+
+    .container{
+        padding-top:10px;
+        padding-left:10px;
+        padding-right:10px;
+       
+        
+    
+    }
+
+    .container .container-content{
+        display:grid;
+        grid-template-columns:1fr;
+        padding:10px 10px;
+       
+    }
+
+    .content-img img{
+        width:100%;
+        object-fit:cover;
+        border-radius:5px;
+    
+    }
+
+
+}

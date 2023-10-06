@@ -1,0 +1,159 @@
+body{
+    height: 4000px;
+}
+
+.container-title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top:10px;
+  padding-bottom:10px;
+  color:#3f4c52;
+  
+}
+
+.container-title p{
+    font-size: 13px;
+    color:black;
+    
+}
+
+
+.container-content{
+     display:flex;
+     flex-direction: column;
+     align-items: center;
+     padding:20px 100px;
+     /* border: 1px solid #5e7c60; */
+     
+    
+    
+}
+
+.container-content .filter-section{
+ /* border:1px solid red; */
+    padding-bottom: 25px;
+  
+}
+
+.filter-section-title{
+    font-size: 14px;
+    text-align: center;
+}
+
+.cost-review-section{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr ;
+    column-gap:40px;
+    row-gap: 70px;
+    align-items: center;
+}
+
+
+
+.costumer-section .container-cost-review{
+    margin-top: 86px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#5e7c60;
+    border-top-left-radius: 50px;
+    position: relative;
+    
+
+}
+
+.container-cost-review .cost-profile-desc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#f9f5f2;
+    border-bottom-right-radius: 50px;
+    position: relative;
+    top:80px;
+    font-family: poppins, sans-serif;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 30px;;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0,0.5) ;
+    /* border: 1px solid salmon; */
+
+}
+
+.cost-profile-img{
+    width: 150px;
+    height:150px;
+    object-fit: cover;
+    border-radius: 100%;
+    position:absolute;
+    top:-90px;
+    box-shadow: 0px 0px 2px  rgba(0, 0, 0,0.5);
+}
+
+
+.cost-profile-desc .cost-name{
+    font-family: poppins, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+     color:#3f4c52; 
+}
+
+.cost-profile-desc .cost-job{
+    font-size: 13px;
+    font-weight: 300;
+    font-family:sans-serif;
+    color:#3f4c52; 
+}
+
+.cost-profile-desc .cost-rating{
+    width: 100%;
+    padding:0px 25px;
+    /* border: 1px solid black; */
+    object-fit: cover;
+    position:relative;
+    top:-33px;
+}
+
+.cost-profile-desc .cost-quotes-reviews{
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+    top:-36px;
+    font-weight:500;
+    color:#3f4c52; 
+}
+
+.filter-byrating .checkbox-rating{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    gap:30px;
+   
+}
+
+.checkbox-rating .button-select {
+
+  /* outline: 1px solid #3f4c52; */
+  border: none;
+  /* border-radius:100%; */
+  cursor:pointer;
+  padding: 13px 9px;
+  font-family: poppins, sans-serif;
+  display: flex;
+  gap:3px;
+  background-color: transparent;
+  transition: all 0.5s ease;
+}
+
+.checkbox-rating .button-select:hover{
+    /* opacity: 0.7; */
+    color: #5e7c60;
+    
+   
+}
+
+
+
+
+

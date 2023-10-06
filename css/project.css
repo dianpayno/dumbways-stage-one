@@ -306,3 +306,31 @@ body{
 
 }
 
+
+
+/* resvonsive */
+
+@media screen and (max-width : 768px){
+
+    .section-one .container{
+        width:90%;
+        padding:10px 10px;
+        
+    }
+
+    .section-two .container {
+        padding:10px 20px;
+        
+        
+    }
+
+    .container-content{
+        display:grid;
+        grid-template-columns:1fr;
+        r
+     
+        
+    }
+
+
+}
