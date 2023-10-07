@@ -59,6 +59,7 @@ body{
     background-color:#5e7c60;
     border-top-left-radius: 50px;
     position: relative;
+    z-index: -1;
     
 
 }
@@ -70,6 +71,7 @@ body{
     background-color:#f9f5f2;
     border-bottom-right-radius: 50px;
     position: relative;
+    z-index: -1;
     top:80px;
     font-family: poppins, sans-serif;
     padding-top: 20px;
@@ -87,6 +89,7 @@ body{
     object-fit: cover;
     border-radius: 100%;
     position:absolute;
+    z-index: -1;
     top:-90px;
     box-shadow: 0px 0px 2px  rgba(0, 0, 0,0.5);
 }
@@ -112,6 +115,7 @@ body{
     /* border: 1px solid black; */
     object-fit: cover;
     position:relative;
+    z-index: -1;
     top:-33px;
 }
 
@@ -122,6 +126,7 @@ body{
     top:-36px;
     font-weight:500;
     color:#3f4c52; 
+    z-index: -1;
 }
 
 .filter-byrating .checkbox-rating{
@@ -153,7 +158,41 @@ body{
    
 }
 
+.noresult-js {
+   
+    font-size: 12px;
+}
 
 
+/* responsive */
 
+@media screen and (max-width : 768px){
 
+    .cost-review-section{
+    grid-template-columns:300px ;
+    
+}
+
+.container-content{
+     padding:20px 10px;
+     
+
+}
+
+.container-title{
+    font-size: 15px;
+    text-align: center;
+   
+}
+
+.filter-byrating .checkbox-rating{
+    gap:2px;
+  
+}
+
+.cost-profile-desc .cost-rating{
+  
+ 
+}
+
+}
