@@ -151,7 +151,7 @@ if(filterReviews.length === 0){
   
   <div class="costumer-section">
   <div class="container-cost-review">
-              <img class="cost-profile-img" src="./img/profile-img-fixed.jpg" alt="profile-img">
+              <img class="cost-profile-img" src="${item.img}" alt="profile-img">
               <div class="cost-profile-desc">
               <div class="cost-name">${item.name}</div>
               <div class="cost-job">${item.job}</div>
