@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 
+body{
+    overflow-x: hidden;
+}
 
 
 
@@ -140,7 +143,11 @@
 }
 
     .right-section{
-        margin-right:10px;
+        margin-right:5px;
+    }
+
+    .right-section ul{
+        gap:11px;
     }
 
   
@@ -261,12 +268,13 @@
 
     .right-section ul {
         flex-direction:column;
-        justify-content:center;
-        background-color:white;
+        justify-content:space-evenly;
+        background-color:#f9f9f9;
         list-style-type: none;
         position:absolute;
         text-align:center;
         top:54px;
+        z-index: 10;
         left:0;
         bottom:0;
         right:0;

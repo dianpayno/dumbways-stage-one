@@ -1,4 +1,4 @@
-export let reviewersProject =[
+const reviewersProject =[
         {
             name:"Harry Edward",
         job:"Content Creator",
@@ -54,4 +54,4 @@ export let reviewersProject =[
         quotes:"You are a great introduction to modern front-end web design. It takes a broad high level view, shows you major components used in modern web design and shows you how the pieces fit together.",
          },
         
-    ]
+    ];
