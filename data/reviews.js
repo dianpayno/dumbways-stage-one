@@ -1,4 +1,4 @@
-const reviewersProject =[
+let reviewersProject =[
         {
             name:"Harry Edward",
         job:"Content Creator",

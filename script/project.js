@@ -1,25 +1,13 @@
+const isVip = true;
 
-const arr = [1,2,3,4,5,6];
- arr.forEach( (item)=>{
-    console.log(item);
- });
+let checkingVip = new Promise((resolve, reject)=>{
+if (isVip){
+   resolve("You are VIP");
+} else {
+   reject("You are not VIP");
+}
+})
 
-
- const arr2 = [1,2,3,4,5,6]
- const double = arr2.map((x)=>{
-    return x*2
- })
-
-
-console.log(double);
-
-
-const arr4 = [1,2,3,4,5,6];
-const sum = arr4.reduce((total, item)=>{
-    console.log(total);
-    // console.log(item);
-    return total + item;
-
-},0);
-
-console.log(sum);
+checkingVip
+.then((respone => console.log(`Yes ${respone}`)))
+.catch((respone => console.log(`Sorry ${respone}`)));

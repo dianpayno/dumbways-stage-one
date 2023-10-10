@@ -7,7 +7,7 @@
 // });
 
 
-// Hitung Durasi pengerjaan Project
+// Count Project duration
 let days="";
 let months="";
 function durationCount (start, end){
