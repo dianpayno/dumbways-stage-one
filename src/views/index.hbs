@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome👋</title>
+
+     <!-- font-family -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+
+    <!-- link font awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- css external-link -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/project.css">
+
+    
+    <!-- bootstarp cdn -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+    
+   
+  
+<body>
+    <!--navbar  -->
+    <navbar>
+        <div class="container-navbar">
+
+            <div class="left-section">
+                <div>
+                    <a href="\">
+                          <div class="logo-bg">
+                            <div class="logo">dianH.dev</div>
+                        </div>
+                    </a>
+                    
+                    
+                </div>
+                
+            </div>
+
+            <div class="right-section">
+            
+                    <ul >
+                        <li><a href="/">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="/myproject">Add Project</a></li>
+                        <li><a href="/testimoni">Testimonial</a></li>
+                        <li><a href="/contact ">Contact</a></li>
+                    </ul>
+            
+                <div>
+                    <img src="img/hamburger.svg" class="hamburger-toggle">
+                </div>
+                    
+                   
+            </div>
+        </div>
+    </navbar>
+
+
+    
+
+
+    <!-- container -->
+  
+        <div class="data-container">
+            
+         <div class="data-container-item">
+                    
+                    <div class="greet-title">
+                        <p>Junior Full Stack Developer
+                        <img src="img/wave-hand.png" class="hand">
+                        </p>
+                        
+                    </div>
+
+                    <div class="self-desc">
+                        <p> Hallo, I'm Dian Herdiana. A passionate Full Stack Developer based in Bandung, Indonesia. 📍</p>
+                    </div>
+
+                        <div class="download-cv-button">          
+                                <a href="#">
+                                Download CV
+                                </a>
+                        </div>
+                        <div class="sosmed-container">
+                            <div  class="findme-text">
+                                <span>Find me on:<span>
+                            </div>
+                    
+                            <div class="social-media">
+                                <div class="sosmed-icon"><a href="https://id.linkedin.com/">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a></div>
+                                <div class="sosmed-icon">
+                                <a href="https://id.instagram.com/">
+                                    <i class="fa-brands fa-github"></i>
+                                </a> </div>
+                            </div>
+                       </div>
+                
+        </div>
+
+         <div class="profile-container">
+
+                        <div class="img-profile-container">
+
+                            <div class="profile-img">
+                                
+                            <img src="img/profile-img-fixed.jpg">
+                            </div>
+
+                            
+                        </div>
+
+         </div>
+
+         
+
+         </div>
+
+        
+
+       
+
+         <div class="tech-container">
+            <div  class="tech-text">
+                <span>Tech Stack   <span>
+            </div>
+    
+            <div class="tech-stack">
+                <div class="tech-icon">
+                    <img src="img/tech/html-5-svgrepo-com.svg">
+                    <img src="img/tech/css-3-svgrepo-com.svg">
+                    
+                </div>
+                
+            </div>
+
+         </div>                 
+    </div>   
+   
+
+    <!-- my project Section -->
+   
+    <div class="section-two">
+    <div class="container">
+            <div class="container-title"> <h2 class="fw-bold">MY PROJECT</h2></div>
+           
+                
+     <div class="container-content">
+                    
+                <!-- card 1 -->
+       
+                {{#each myproject}}
+            <div class="card-project-1">
+               <div class="container-card-project">
+                        <div class="card-project-img">
+                            <img src="img/tokopedia-clone.png">
+                        </div>
+                        <div class="card-project-title">{{this.title}}</div>
+                       
+                        <div class="card-project-duration">Duration : {{this.duration}}</div>
+                        <div class="card-project-desc">
+                            <p>
+                                {{this.content}}
+                            </p>
+                        </div>
+                            <div class="card-project-tech">
+                                        <div class="tech-option">
+                                            {{#each selectedTech}}
+                                            {{#if this}}
+                                            <img src="img/tech/{{@key}}.svg">
+                                            {{/if}}
+                                            {{/each}}
+                                        </div>
+                            </div>
+
+                            <div class="card-project-button">
+                                <a href="/project/{{@index}}"> View Detail</a>
+                                <a href="/editproject/{{@index}}" class="edit-button">Edit</a>
+                                <a href="/deleteproject/{{@index}}" class="delete-button">Delete</a>  
+                            </div>
+                   
+               </div>    
+           </div>   
+           {{/each}}
+    </div>       
+
+
+    </div>
+    </div>
+
+
+   
+
+ 
+
+<script src="script/responsive.js"></script> 
+
+<!-- Boostrap -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+
+
+   
+</body>
+</html>

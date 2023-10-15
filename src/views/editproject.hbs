@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Project</title>
+
+    <!-- Css Link -->
+
+    <link rel="stylesheet" href="/css/project.css">
+    <link rel="stylesheet" href="/css/checkbox-edit.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+
+    <!-- Font Link -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+     <!--navbar  -->
+     <navbar>
+        <div class="container-navbar">
+
+            <div class="left-section">
+                <div>
+                    <a href="/">
+                          <div class="logo-bg">
+                            <div class="logo">dianH.dev</div>
+                        </div>
+                    </a>
+                    
+                    
+                </div>
+                
+            </div>
+
+            <div class="right-section">
+            
+                    <ul >
+                        <li><a href="/">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="/myproject">My Project</a></li>
+                        <li><a href="/testimoni">Testimonial</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+            
+                <div>
+                    <img src="/img/hamburger.svg" class="hamburger-toggle">
+                </div>
+                    
+                   
+            </div>
+        </div>
+    </navbar>
+
+    <!-- Navbar End  -->
+    <!-- Contain section -->
+        <!-- Form Input Project -->
+
+<div class="section-one">
+    <div class="container">
+        <div class="form-title">
+            <h2>EDIT MY PROJECT</h2>
+        </div>
+        <div class="form-container">
+            <form method="post" action="/updateProject/{{@index}}">
+
+                <div>
+                    <label for="nama-project">Project Name</label>
+                </div>
+                <div class="project-name">
+                    <input type="text" id="nama-project" name="name" value="{{editProject.title}}">
+                </div>
+                <div class="project-time">
+                    <div>
+                    <label for="start-date">Start Date</label>
+                    <input type="date" id="start-date" name="startDate" value="{{editProject.date.startDate}}">
+                    </div>
+                    <div>
+                    <label for="end-date">End Date</label>
+                    
+                    <input type="date" id="end-date" name="endDate" value="{{editProject.date.endDate}}">
+                    </div>
+                 </div>
+
+                 <div>
+                    <label for="desc-project">Description</label>
+                </div>
+                <div>
+                    <textarea class="desc-project" id="desc-project" name="content">{{editProject.content}}</textarea>
+                </div>
+
+                    <div>
+                        <div><label>Technologies</label></div>
+
+                        <div class="tech-option">
+                            <div>
+                                <div class="techoption">
+                                    {{#each editProject.selectedTech}}
+                                    <div>
+                                    <input type="checkbox" name="tech" id="option-1" value="{{@key}}" {{#if this}}checked{{/if}}>
+                                    <label for="option-one">{{@key}}</label>
+                                    </div>
+                                   
+                                    {{/each}}
+                                
+                            </div>
+                        </div>                      
+                    </div>
+
+                    <div>
+                        <div>
+                            <label>Upload image</label>
+                        </div>
+                        <div>
+                            <label class="input-blog-image">
+                                <div class="text">Choose</div>
+                                <div>
+                                <img src="/img/file.png">
+                                <input type="file"  id="input-blog-image" name="image" hidden >
+                                </div>
+                                
+                        </label>
+                        </div>
+                    </div>
+
+                    <div class="submit-button-container">
+                        <div><button  type="submit" class="submit-button" 
+                            >Submit</button></div>
+                    </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+    
+{{!-- <script src="/script/myproject.js">
+</script> --}}
+<script src="/script/responsive.js"></script> 
+</body>
+</html>

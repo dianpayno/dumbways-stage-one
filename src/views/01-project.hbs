@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myProject Apps</title>
+
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/topedcloneweb.css">
+
+     <!-- font-family -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+
+      <!-- link font awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+     <!--navbar  -->
+     <navbar>
+        <div class="container-navbar">
+
+            <div class="left-section">
+                <div>
+                    <a href="/">
+                          <div class="logo-bg">
+                            <div class="logo">dianH.dev</div>
+                        </div>
+                    </a>
+                    
+                    
+                </div>
+                
+            </div>
+
+            <div class="right-section">
+            
+                    <ul >
+                        <li><a href="/">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="/myproject">Add Project</a></li>
+                        <li><a href="/testimoni">Testimonial</a></li>
+                        <li><a href="contact">Contact</a></li>
+                    </ul>
+            
+                <div>
+                    <img src="/img/hamburger.svg" class="hamburger-toggle">
+                </div>
+                    
+                   
+            </div>
+        </div>
+    </navbar>
+
+    <!-- content -->
+
+    <section>
+        <div class="container">
+            
+           
+        
+            
+          
+            
+            <div class="blog-title">
+                <h1>Detail info of my Project <u>{{project.title}}</u></h1>
+            </div>
+            
+
+            <div class="container-content">
+                
+                <div class="content-img">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRlY2h8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60">
+                </div>
+
+                <div class="content-desc">
+
+                        <div><h4>Duration : </h4></div>
+
+                        <div class="duration-1">
+                            <div>
+                            <img src="/img/tech/calendar.svg">
+                            </div>
+                            <div>
+                            <span>{{project.date.startDateIdFormat}} to {{project.date.endDateIdFormat}}</span>
+                            </div>
+                        </div>
+
+                        <div class="duration-2">
+                            <div>
+                            <img src="/img/tech/clock.svg">
+                            </div>
+                            <div>
+                            <span>{{project.duration}}</span>
+                            </div>
+                        </div>
+
+                        <div class="title"><h4>Technologies:</h4></div>
+
+                                <div class="technologies">
+                                  {{#each project.selectedTech}}
+                                  {{#if this}}
+                                  <div class="technologies-detail">
+                                     <div>
+                                    <img src="/img/tech/{{@key}}.svg">
+                                    </div>
+                                    <div>{{@key}}</div>
+                                    </div>
+                                 {{/if}}
+                                 {{/each}}
+                                
+                                            
+                                </div>
+                             
+                 </div>       
+            </div>
+
+            <div class="main-content">
+                    <p>{{project.content}}
+                        {{!-- Coding Bootcamp Gratis Hingga Disalurkan Kerja
+                        Di bootcamp DumbWays kamu akan belajar coding GRATIS dan LANGSUNG DISALURKAN KERJA,
+                        Pelatihan Intensif Kamu akan mengikuti coding bootcamp DumbWays secara intensif dengan standar industri.
+                        Coding Bootcamp Gratis Hingga Disalurkan Kerja
+                        Di bootcamp DumbWays kamu akan belajar coding GRATIS dan LANGSUNG DISALURKAN KERJA,
+                        Pelatihan Intensif Kamu akan mengikuti coding bootcamp DumbWays secara intensif dengan standar industri.
+                        Coding Bootcamp Gratis Hingga Disalurkan Kerja
+                        Di bootcamp DumbWays kamu akan belajar coding GRATIS dan LANGSUNG DISALURKAN KERJA,
+                        Pelatihan Intensif Kamu akan mengikuti coding bootcamp DumbWays secara intensif dengan standar industri. --}}
+
+
+                    </p>
+            </div>
+         
+       
+    </div>
+
+
+
+
+
+
+
+        
+    </section>
+   
+    <script  src="/script/responsive.js"></script>
+    {{!-- <script  src="script/project.js"></script> --}}
+</body>
+</html>
