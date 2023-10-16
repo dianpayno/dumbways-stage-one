@@ -1,19 +1,20 @@
 
 const { createSecretKey } = require("crypto");
+const { start } = require("repl");
+
 const express = require("express");
 const path = require("path");
-const { start } = require("repl");
 const app = express();
 const PORT = 3000;
-// const data = require ("./src/mocks/blog.json");
-const data =[];
+const data = require ("./src/mocks/blog.json");
+// const data =[];
 
 
 
 
 
 
-// setup hbs 
+// setup hbs as template egine
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'src/views'))
 
@@ -39,7 +40,7 @@ app.post('/addproject', addproject);
 app.get("/deleteproject/:id", deleteProject);
 
 app.get("/editproject/:id", editProject)
-app.post("/updateProject", updateProject)
+app.post("/updateProject/:id", updateProject)
 
 
 app.listen(PORT, ()=>{
@@ -155,7 +156,7 @@ function deleteProject(req, res){
 
 function editProject(req, res){
     const id = req.params.id;
-    const selectedIndex = data[id];
+    const selectedIndex = {...data[id],id};
 
     res.render("editproject",{editProject :selectedIndex} )
 
@@ -164,6 +165,7 @@ function editProject(req, res){
  function updateProject(req, res){
     const {name, content, startDate, endDate} = req.body;
     const selectedTech = req.body.tech;
+    const id = req.params.id;
 
     let nodejs = selectedTech?.includes("nodejs");
     let reactjs =selectedTech?.includes("reactjs");
@@ -236,14 +238,9 @@ function editProject(req, res){
             reactjs,
             nextjs,
             typescript,
-                }
-
-    
-        
+                }  
     }
 
-
-    const id = req.params.id;
     console.log(id);
     data.splice(id ,1, dataObject);
    
@@ -262,7 +259,7 @@ function contact(req, res){
 function project(req, res){ 
     const id = req.params.id;
     const selectedIndex = data[id];
-    console.log(selectedIndex);
+    
     res.render("01-project", {project : selectedIndex})
 }
 function myproject(req, res){
