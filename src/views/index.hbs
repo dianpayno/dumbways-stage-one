@@ -177,7 +177,7 @@
                         </div>
                             <div class="card-project-tech">
                                         <div class="tech-option">
-                                            {{#each selectedTech}}
+                                            {{#each tech}}
                                             {{#if this}}
                                             <img src="img/tech/{{@key}}.svg">
                                             {{/if}}
@@ -186,9 +186,9 @@
                             </div>
 
                             <div class="card-project-button">
-                                <a href="/project/{{@index}}"> View Detail</a>
-                                <a href="/editproject/{{@index}}" class="edit-button">Edit</a>
-                                <a href="/deleteproject/{{@index}}" class="delete-button">Delete</a>  
+                                <a href="/project/{{this.id}}"> View Detail</a>
+                                <a href="/editproject/{{this.id}}" class="edit-button">Edit</a>
+                                <a href="/deleteproject/{{this.id}}" class="delete-button">Delete</a>  
                             </div>
                    
                </div>    

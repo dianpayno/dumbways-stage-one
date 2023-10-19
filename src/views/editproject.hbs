@@ -76,12 +76,12 @@
                 <div class="project-time">
                     <div>
                     <label for="start-date">Start Date</label>
-                    <input type="date" id="start-date" name="startDate" value="{{editProject.date.startDate}}">
+                    <input type="date" id="start-date" name="startDate" value="{{editProject.startDate}}">
                     </div>
                     <div>
                     <label for="end-date">End Date</label>
                     
-                    <input type="date" id="end-date" name="endDate" value="{{editProject.date.endDate}}">
+                    <input type="date" id="end-date" name="endDate" value="{{editProject.endDate}}">
                     </div>
                  </div>
 
@@ -98,7 +98,7 @@
                         <div class="tech-option">
                             <div>
                                 <div class="techoption">
-                                    {{#each editProject.selectedTech}}
+                                    {{#each editProject.tech}}
                                     <div>
                                     <input type="checkbox" name="tech" id="option-1" value="{{@key}}" {{#if this}}checked{{/if}}>
                                     <label for="option-one">{{@key}}</label>
