@@ -20,12 +20,12 @@
 <body>
 
      <!--navbar  -->
-     <navbar>
+  <navbar>
         <div class="container-navbar">
 
             <div class="left-section">
                 <div>
-                    <a href="/">
+                    <a href="\">
                           <div class="logo-bg">
                             <div class="logo">dianH.dev</div>
                         </div>
@@ -39,15 +39,60 @@
             <div class="right-section">
             
                     <ul >
-                        <li><a href="/">Home</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="/myproject">My Project</a></li>
-                        <li><a href="/testimoni">Testimonial</a></li>
-                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/" class="main">Home</a></li>
+                        {{#if isLogin}}
+                        <li><a href="/myproject" class="main">Add Project</a></li>
+                        {{/if}}
+                        <li><a href="/testimoni" class="main">Testimonial</a></li>
+                        <li><a href="/contact " class="main">Contact</a></li>
+                        {{#if isLogin}}
+                        <li><a href=""
+                            style="
+                              text-transform: capitalize;
+                              font-size: 13px;
+                              font-weight: 400; 
+                              margin-left:50px; 
+                                ">Hallo {{user}} </a></li>
+                        <li><a href="/logout"
+                        style ="
+                          font-size: 13px;  
+                          background-color:red;
+                          padding: 4px 9px;
+                          color:white;
+                          border-radius: 3px;
+                          text-transform: capitalize;
+                          font-weight: 300;
+                            "
+                        >Log out</a></li>
+                        {{else}}
+                         <li><a href="/login"
+                        style ="
+                          font-size: 13px;  
+                          background-color:orangered;
+                          padding: 4px 9px;
+                          color:white;
+                          border-radius: 3px;
+                          text-transform: capitalize;
+                          font-weight: 300;
+                          margin-left: 40px;
+                            "
+                        >Log in</a></li>
+                         <li><a href="/register"
+                        style ="
+                          font-size: 13px;  
+                          background-color:orangered;
+                          padding: 4px 9px;
+                          color:white;
+                          border-radius: 3px;
+                          text-transform: capitalize;
+                          font-weight: 300;
+                            "
+                        >register</a></li>
+                        {{/if}}
                     </ul>
             
                 <div>
-                    <img src="/img/hamburger.svg" class="hamburger-toggle">
+                    <img src="img/hamburger.svg" class="hamburger-toggle">
                 </div>
                     
                    
@@ -64,24 +109,29 @@
         <div class="form-title">
             <h2>EDIT MY PROJECT</h2>
         </div>
+        
         <div class="form-container">
-            <form method="post" action="/updateProject/{{editProject.id}}">
+            <form 
+            method="post" 
+            action="/updateProject/{{edit.id}}"
+            enctype="multipart/form-data"
+            >
 
                 <div>
                     <label for="nama-project">Project Name</label>
                 </div>
                 <div class="project-name">
-                    <input type="text" id="nama-project" name="name" value="{{editProject.title}}">
+                    <input type="text" id="nama-project" name="name" value="{{edit.title}}">
                 </div>
                 <div class="project-time">
                     <div>
                     <label for="start-date">Start Date</label>
-                    <input type="date" id="start-date" name="startDate" value="{{editProject.startDate}}">
+                    <input type="date" id="start-date" name="startDate" value="{{edit.startDate}}">
                     </div>
                     <div>
                     <label for="end-date">End Date</label>
                     
-                    <input type="date" id="end-date" name="endDate" value="{{editProject.endDate}}">
+                    <input type="date" id="end-date" name="endDate" value="{{edit.endDate}}">
                     </div>
                  </div>
 
@@ -89,7 +139,7 @@
                     <label for="desc-project">Description</label>
                 </div>
                 <div>
-                    <textarea class="desc-project" id="desc-project" name="content">{{editProject.content}}</textarea>
+                    <textarea class="desc-project" id="desc-project" name="content">{{edit.content}}</textarea>
                 </div>
 
                     <div>
@@ -98,7 +148,7 @@
                         <div class="tech-option">
                             <div>
                                 <div class="techoption">
-                                    {{#each editProject.tech}}
+                                    {{#each edit.tech}}
                                     <div>
                                     <input type="checkbox" name="tech" id="option-1" value="{{@key}}" {{#if this}}checked{{/if}}>
                                     <label for="option-one">{{@key}}</label>
@@ -115,14 +165,22 @@
                             <label>Upload image</label>
                         </div>
                         <div>
-                            <label class="input-blog-image">
-                                <div class="text">Choose</div>
-                                <div>
+                            <img src="/{{edit.img}}" width="70px">
+                             <div class="input-blog-image" style="
+                                position:relative;">
+                                <label style="
+                                background-color:orangered;
+                                color: white;
+                                border-radius: 2px;
+                                position:absolute;
+                                padding: 15px 4px;
+                                ">Choose Image</label>
+                                <input type="file"  id="input-blog-image" name="upload-img"
+                                style="
+                                padding:4px 0px;
+                                ">
                                 <img src="/img/file.png">
-                                <input type="file"  id="input-blog-image" name="image" hidden >
                                 </div>
-                                
-                        </label>
                         </div>
                     </div>
 
@@ -132,9 +190,29 @@
                     </div>
 
             </form>
-
+           
         </div>
     </div>
+    
+      <div>
+        <img src="https://img.freepik.com/free-vector/internship-job-concept_23-2148721817.jpg?size=626&ext=jpg&uid=R119081331&ga=GA1.1.73954028.1696325208&semt=ais"
+        style="
+        position:absolute;
+        right:700px;
+        top:200px;
+        width:40%;
+        transform:scaleX(-1);
+        ">
+    </div>
+    {{!-- <div>
+        <img src="https://img.freepik.com/free-vector/internship-job-concept_23-2148721817.jpg?size=626&ext=jpg&uid=R119081331&ga=GA1.1.73954028.1696325208&semt=ais"
+        style="
+        position:absolute;
+        right:60px;
+        top:200px;
+        width:40%;
+        ">
+    </div> --}}
 </div>
 
 

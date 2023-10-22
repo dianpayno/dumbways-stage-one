@@ -50,11 +50,56 @@
             <div class="right-section">
             
                     <ul >
-                        <li><a href="/">Home</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="/myproject">Add Project</a></li>
-                        <li><a href="/testimoni">Testimonial</a></li>
-                        <li><a href="/contact ">Contact</a></li>
+                        <li><a href="/" class="main">Home</a></li>
+                        {{#if isLogin}}
+                        <li><a href="/myproject" class="main">Add Project</a></li>
+                        {{/if}}
+                        <li><a href="/testimoni" class="main">Testimonial</a></li>
+                        <li><a href="/contact " class="main">Contact</a></li>
+                        {{#if isLogin}}
+                        <li><a href=""
+                            style="
+                              text-transform: capitalize;
+                              font-size: 13px;
+                              font-weight: 400; 
+                              margin-left:50px; 
+                                ">Hallo {{user}} </a></li>
+                        <li><a href="/logout"
+                        style ="
+                          font-size: 13px;  
+                          background-color:red;
+                          padding: 4px 9px;
+                          color:white;
+                          border-radius: 3px;
+                          text-transform: capitalize;
+                          font-weight: 300;
+                            "
+                        >Log out</a></li>
+                        {{else}}
+                         <li><a href="/login"
+                        style ="
+                          font-size: 13px;  
+                          background-color:orangered;
+                          padding: 4px 9px;
+                          color:white;
+                          border-radius: 3px;
+                          text-transform: capitalize;
+                          font-weight: 300;
+                          margin-left: 40px;
+                            "
+                        >Log in</a></li>
+                         <li><a href="/register"
+                        style ="
+                          font-size: 13px;  
+                          background-color:orangered;
+                          padding: 4px 9px;
+                          color:white;
+                          border-radius: 3px;
+                          text-transform: capitalize;
+                          font-weight: 300;
+                            "
+                        >register</a></li>
+                        {{/if}}
                     </ul>
             
                 <div>
@@ -154,7 +199,23 @@
    
     <div class="section-two">
     <div class="container">
-            <div class="container-title"> <h2 class="fw-bold">MY PROJECT</h2></div>
+            <div style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                ">
+                <img 
+                style="width: 90px;
+                
+                "
+                src="https://img.freepik.com/free-vector/flat-design-content-management-system-illustrated_23-2148816269.jpg?size=626&ext=jpg&ga=GA1.1.714462566.1697981532&semt=ais">
+                 <h2 class="fw-bold container-title">MY PROJECT</h2>
+                 <img 
+                 style="width: 90px;
+                 transform: scaleX(-1);
+                 "
+                 src="https://img.freepik.com/free-vector/flat-design-content-management-system-illustrated_23-2148816269.jpg?size=626&ext=jpg&ga=GA1.1.714462566.1697981532&semt=ais">
+            </div>
            
                 
      <div class="container-content">
@@ -165,11 +226,15 @@
             <div class="card-project-1">
                <div class="container-card-project">
                         <div class="card-project-img">
-                            <img src="img/tokopedia-clone.png">
+                            <img src="{{this.img}}">
                         </div>
                         <div class="card-project-title">{{this.title}}</div>
                        
                         <div class="card-project-duration">Duration : {{this.duration}}</div>
+                         <div class="card-project-duration "
+                         style="
+                         text-transform: capitalize;
+                         ;">author : {{this.author}}</div>
                         <div class="card-project-desc">
                             <p>
                                 {{this.content}}
@@ -186,9 +251,15 @@
                             </div>
 
                             <div class="card-project-button">
+                            
                                 <a href="/project/{{this.id}}"> View Detail</a>
+                               {{#if this.isLogin}}
                                 <a href="/editproject/{{this.id}}" class="edit-button">Edit</a>
-                                <a href="/deleteproject/{{this.id}}" class="delete-button">Delete</a>  
+                                <a href="/deleteproject/{{this.id}}" class="delete-button">Delete</a> 
+                                {{/if}} 
+                              
+                             
+                                
                             </div>
                    
                </div>    

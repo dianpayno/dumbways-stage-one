@@ -2,4 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     text-transform: capitalize;
+    width:70%;
+    padding:10px 0px;
+
 }

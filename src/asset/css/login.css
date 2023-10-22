@@ -5,7 +5,7 @@
 }
 
 body{
-    height:1000px; 
+    /* height:1000px; */
     color:#374151; 
    
     
@@ -13,13 +13,15 @@ body{
 
 .section-one{
 
-    padding-bottom:10px;
+    
+    padding-top: 50px;  
+    padding-bottom:80px;
     display:flex;
+    gap:10px;
     justify-content:center;
     font-family: 'Poppins', sans-serif;
-    position:relative;
+    position: relative;
     /* background:url("bg-img.png");  */
-    
    
     
     
@@ -32,35 +34,39 @@ body{
 
     display:flex;
     flex-direction:column;
-    width:35%;
-    padding:25px 50px;
-    border-radius:5px;
+    align-items: center;
+    width:30%;
+    padding:50px 30px;
+    background-color:#f9f9f9;
+    border-radius:20px;
     overflow:hidden;
     align-items:center;
     color:#374151;    
     font-size:15px;
-    z-index:1;
-    background-color:#f9f9f9;
-
+    z-index: 1;
+    /* background-color: #fe4e30; */
     
     
     
  
 }
+
+
 .form-title{
     width:100%;
-    margin-bottom:10px;
-    margin-top:10px;
     display:flex;
     justify-content:center;
-    border-bottom:2px solid #374151;
-    color:#374151;   
+    color:#374151; 
+    font-size:25px;
+    margin-bottom:10px;
+
     
 }
 
 .form-container {
     width:100%;
     padding-top:15px;
+    background-color:transparent;
     font-family:roboto;
    
    
@@ -68,19 +74,13 @@ body{
     
 }
 
-.project-time{
-    
-    display:grid;
-    grid-template-columns: 130px 130px;
-    gap:10px;
-    
-}
+
 
 
 .form-container form .project-id input, .project-name input, .project-time  input, textarea {
     width: 100%; 
     border:none;
-    padding:5px 10px;
+    padding:8px 10px;
     border-radius:3px;
     margin-bottom:15px;
     font-size:14px;
@@ -100,53 +100,14 @@ body{
     outline:1px solid #fe4e30;
 }
 
-.tech-option{
-    display:flex;
-    gap:15px;
-    font-size:13px;
-    margin-top:10px;
-    margin-bottom:20px
-    
-}
-
-.input-blog-image{
-    display:flex;
-    justify-content:space-between;
-    box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.3);
-    align-items:center;
-    font-size:13px;
-    padding-right:5px;
-    border-radius:3px;
-    overflow:hidden;
-    cursor:pointer;
-    margin-bottom:23px;
-    transition:0.5s ease;
-}
-
-.input-blog-image img{
-    width:19px;
-    rotate:45deg;
-}
-
-.input-blog-image .text{
-    background-color:#fe4e30;
-    padding:5px;
-    opacity:0.9;
-  
-}
-
-.input-blog-image:hover{
-    opacity:0.7;
-    outline:1px solid #fe4e30;
-}
-   
 .submit-button-container{
+    /* margin-top: 20px;
     display:flex;
-    justify-content:end;
+    justify-content:end; */
 }
 
 .submit-button-container .submit-button{
-    padding:5px 12px;
+    padding:8px 15px;
     border:none;
     background-color:#fe4e30;
     color:white;
@@ -155,6 +116,7 @@ body{
     box-shadow: 0px 0px 1px 0px rgba(0,0,0,1);
     font-weight:bold;
     transition: 0.5s ease;
+    width:100%;
 }
 
 .submit-button-container .submit-button:hover{
@@ -165,7 +127,7 @@ body{
 /* css section 2 */
 
 .section-two{
-    background-color:white;
+    background-color:#f5f5f5;
     
     padding:20px;
 }
@@ -184,7 +146,7 @@ body{
     display:flex;
     justify-content:center;
     width:100%;
-    position:relative;
+    border-bottom: 2px solid #fe4e30;
 }
 
 .container-content{
@@ -246,14 +208,13 @@ body{
 
 .card-project-title{
     padding:0px 7px;
-    padding-bottom:5px; 
     font-weight:bold;
     font-size:17px
   
 }
 
 .card-project-duration{
-    padding:0px 7px;
+    padding:7px 7px;
     font-size:12px
 
 

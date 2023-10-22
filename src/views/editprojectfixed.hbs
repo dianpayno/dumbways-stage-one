@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Project</title>
+    <title>Edit Project</title>
 
     <!-- Css Link -->
 
-    <link rel="stylesheet" href="css/project.css">
-    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="/css/project.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+     <link rel="stylesheet" href="/css/checkbox-edit.css">
 
     <!-- Font Link -->
 
@@ -110,34 +111,26 @@
         </div>
         <div class="form-container">
             <form 
-                method="post"
-                action="/addproject"
-                enctype="multipart/form-data"
+            method="post" 
+            action="/updateProject/{{edit.id}}"
+            enctype="multipart/form-data"
                 >
-            {{!-- onsubmit="
-                addMyProject(event);"> --}}
-                <!-- <div>
-                    <label for="id-project">Project ID</label>
-                </div>
-                <div class="project-id">
-                    <input type="text" id="id-project">
-                </div> -->
 
                 <div>
                     <label for="nama-project">Project Name</label>
                 </div>
                 <div class="project-name">
-                    <input type="text" id="nama-project" name="name">
+                    <input type="text" id="nama-project" name="name" value="{{edit.title}}">
                 </div>
                 <div class="project-time">
                     <div>
                     <label for="start-date">Start Date</label>
-                    <input type="date" id="start-date" name="startDate">
+                    <input type="date" id="start-date" name="startDate" value="{{edit.startDate}}">
                     </div>
                     <div>
                     <label for="end-date">End Date</label>
                     
-                    <input type="date" id="end-date" name="endDate">
+                    <input type="date" id="end-date" name="endDate" value="{{edit.endDate}}">
                     </div>
                  </div>
 
@@ -145,35 +138,19 @@
                     <label for="desc-project">Description</label>
                 </div>
                 <div>
-                    <textarea class="desc-project" id="desc-project" name="content"></textarea>
+                    <textarea class="desc-project" id="desc-project" name="content">{{edit.content}}</textarea>
                 </div>
 
                     <div>
                         <div><label>Technologies</label></div>
 
-                        <div class="tech-option">
-                            <div>
-                                <div>
-                                    <input type="checkbox" name="tech" id="option-1" value="nodejs">
-                                <label for="option-one">Node Js</label>
-                                </div>
-                                <div>
-                                <input type="checkbox" name="tech" id="option-2" value="nextjs">
-                                <label for="option-one">Next Js</label>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div>
-                                <input type="checkbox" name="tech" id="option-3" value="reactjs">
-                                <label for="option-one">React Js</label>
-                                </div>
-                                <div>
-                                <input type="checkbox" name="tech" id="option-4" value="typescript">
-                                <label for="option-one">Typescript</label>
-                                </div>
-                                
-                            </div>
+                        <div class="techoption">
+                                    {{#each edit.tech}}
+                                    <div>
+                                    <input type="checkbox" name="tech" id="option-1" value="{{@key}}" {{#if this}}checked{{/if}}>
+                                    <label for="option-one">{{@key}}</label>
+                                    </div>
+                                    {{/each}}
                         </div>                      
                     </div>
 
@@ -182,8 +159,8 @@
                             <label>Upload image</label>
                         </div>
                         <div>
-                            
-                                <div class="input-blog-image" style="
+                            <img src="/{{edit.img}}" width="70px">
+                             <div class="input-blog-image" style="
                                 position:relative;">
                                 <label style="
                                 background-color:orangered;
@@ -195,12 +172,9 @@
                                 <input type="file"  id="input-blog-image" name="upload-img"
                                 style="
                                 padding:4px 0px;
-                                
                                 ">
-                                <img src="img/file.png">
+                                <img src="/img/file.png">
                                 </div>
-                                
-                        
                         </div>
                     </div>
 
@@ -215,22 +189,23 @@
     </div>
 
     <div>
-        <img src="https://img.freepik.com/free-vector/internship-job-concept_23-2148721817.jpg?size=626&ext=jpg&uid=R119081331&ga=GA1.1.73954028.1696325208&semt=ais"
+        <img src="https://img.freepik.com/free-vector/graphic-design-video-tutorial-traditional-art-internet-course-painter-online-masterclass-web-designer-distance-class-painting-e-learning-education_335657-2648.jpg?size=626&ext=jpg&ga=GA1.1.714462566.1697981532&semt=ais"
         style="
         position:absolute;
-        right:700px;
-        top:200px;
-        width:40%;
-        transform:scaleX(-1);
+        right:750px;
+        top:150px;
+        width:35%;
+       
         ">
     </div>
     <div>
-        <img src="https://img.freepik.com/free-vector/internship-job-concept_23-2148721817.jpg?size=626&ext=jpg&uid=R119081331&ga=GA1.1.73954028.1696325208&semt=ais"
+        <img src="https://img.freepik.com/free-vector/graphic-design-video-tutorial-traditional-art-internet-course-painter-online-masterclass-web-designer-distance-class-painting-e-learning-education_335657-2648.jpg?size=626&ext=jpg&ga=GA1.1.714462566.1697981532&semt=ais"
         style="
         position:absolute;
-        right:60px;
-        top:200px;
-        width:40%;
+        right:70px;
+        top:150px;
+        width:35%;
+         transform:scaleX(-1);
         ">
     </div>
 </div>

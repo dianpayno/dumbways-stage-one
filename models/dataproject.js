@@ -16,12 +16,14 @@ module.exports = (sequelize, DataTypes) => {
   dataproject.init({
     title: DataTypes.STRING,
     content: DataTypes.STRING,
+    startDate: DataTypes.STRING,
+    endDate: DataTypes.STRING,
     startDateId: DataTypes.STRING,
     endDateId: DataTypes.STRING,
-    startDate: DataTypes.STRING,
-    endDate:DataTypes.STRING,
     duration: DataTypes.STRING,
-    tech:DataTypes.JSON
+    tech: DataTypes.JSON,
+    author: DataTypes.INTEGER,
+    img: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'dataproject',

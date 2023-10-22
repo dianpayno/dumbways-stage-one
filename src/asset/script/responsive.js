@@ -56,15 +56,18 @@ function format (tgl){
  console.log(final);
 
 
- let selectedGender = [ "male", "female"]
+//  let selectedGender = [ "male", "female"]
 
 
- let male = selectedGender?.includes("male");
- let female= selectedGender?.includes("female");
+//  let male = selectedGender?.includes("male");
+//  let female= selectedGender?.includes("female");
 
- const genderObject = {
-    male,
-    female
- }
+//  const genderObject = {
+//     male,
+//     female
+//  }
 
- console.log(genderObject);
+//  console.log(genderObject);
+
+console.log("hallo")
+

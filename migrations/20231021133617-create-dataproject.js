@@ -15,6 +15,12 @@ module.exports = {
       content: {
         type: Sequelize.STRING
       },
+      startDate: {
+        type: Sequelize.STRING
+      },
+      endDate: {
+        type: Sequelize.STRING
+      },
       startDateId: {
         type: Sequelize.STRING
       },
@@ -24,14 +30,18 @@ module.exports = {
       duration: {
         type: Sequelize.STRING
       },
-      startDate: {
-        type: Sequelize.STRING
-      },
-      endDate: {
-        type: Sequelize.STRING
-      },
       tech: {
         type: Sequelize.JSON
+      },
+      author: {
+        type: Sequelize.INTEGER,
+        references:{
+          model:"users",
+          key:"id"
+        }
+      },
+      img: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

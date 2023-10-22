@@ -35,7 +35,7 @@ body{
 
 .left-section {
     display: flex;
-    flex: 50%;
+    flex: 20%;
     align-items: center;
     justify-content: start;
     margin-left: 40px;
@@ -70,7 +70,7 @@ body{
 
 .right-section{
     align-items: center;
-    margin-right:50px;
+    margin-right:20px;
     display:flex;
     justify-content:center;
  
@@ -86,7 +86,7 @@ body{
 .right-section ul {
     display:flex;
     /* flex-direction:column; */
-    gap:30px;
+    gap:10px;
     list-style-type: none;
  
 
@@ -103,7 +103,13 @@ body{
     transition:0.5s ease;
 }
 
-.right-section a:hover{
+.main{
+    
+    margin-left:20px;
+
+}
+
+.right-section .main:hover{
     border-bottom: 2px solid #3f4c52;
     font-size:15px;
 }

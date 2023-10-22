@@ -30,7 +30,7 @@
 
             <div class="left-section">
                 <div>
-                    <a href="/">
+                    <a href="\">
                           <div class="logo-bg">
                             <div class="logo">dianH.dev</div>
                         </div>
@@ -44,15 +44,60 @@
             <div class="right-section">
             
                     <ul >
-                        <li><a href="/">Home</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="/myproject">Add Project</a></li>
-                        <li><a href="/testimoni">Testimonial</a></li>
-                        <li><a href="contact">Contact</a></li>
+                        <li><a href="/" class="main">Home</a></li>
+                        {{#if isLogin}}
+                        <li><a href="/myproject" class="main">Add Project</a></li>
+                        {{/if}}
+                        <li><a href="/testimoni" class="main">Testimonial</a></li>
+                        <li><a href="/contact " class="main">Contact</a></li>
+                        {{#if isLogin}}
+                        <li><a href=""
+                            style="
+                              text-transform: capitalize;
+                              font-size: 13px;
+                              font-weight: 400; 
+                              margin-left:50px; 
+                                ">Hallo {{user}} </a></li>
+                        <li><a href="/logout"
+                        style ="
+                          font-size: 13px;  
+                          background-color:red;
+                          padding: 4px 9px;
+                          color:white;
+                          border-radius: 3px;
+                          text-transform: capitalize;
+                          font-weight: 300;
+                            "
+                        >Log out</a></li>
+                        {{else}}
+                         <li><a href="/login"
+                        style ="
+                          font-size: 13px;  
+                          background-color:orangered;
+                          padding: 4px 9px;
+                          color:white;
+                          border-radius: 3px;
+                          text-transform: capitalize;
+                          font-weight: 300;
+                          margin-left: 40px;
+                            "
+                        >Log in</a></li>
+                         <li><a href="/register"
+                        style ="
+                          font-size: 13px;  
+                          background-color:orangered;
+                          padding: 4px 9px;
+                          color:white;
+                          border-radius: 3px;
+                          text-transform: capitalize;
+                          font-weight: 300;
+                            "
+                        >register</a></li>
+                        {{/if}}
                     </ul>
             
                 <div>
-                    <img src="/img/hamburger.svg" class="hamburger-toggle">
+                    <img src="img/hamburger.svg" class="hamburger-toggle">
                 </div>
                     
                    
@@ -71,20 +116,22 @@
           
             
             <div class="blog-title">
-                <h1>Detail info of my Project <u>{{project.title}}</u></h1>
+                <h1>Detail info of Project <u>{{project.title}}</u></h1>
             </div>
             
 
             <div class="container-content">
                 
                 <div class="content-img">
-                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRlY2h8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60">
-                </div>
-
+                    <img src="/{{project.img}}"
+                    style="
+                    width: 100%;
+                    object-fit: cover;
+                    "
+                    > </div>
                 <div class="content-desc">
 
                         <div><h4>Duration : </h4></div>
-
                         <div class="duration-1">
                             <div>
                             <img src="/img/tech/calendar.svg">
@@ -119,7 +166,11 @@
                                 
                                             
                                 </div>
-                             
+                         <div style="
+                         margin-top: 10px;
+                         margin-bottom: 20px;
+                         text-transform: capitalize;
+                         "><h4>Author : {{project.author}}</h4></div>    
                  </div>       
             </div>
 
@@ -138,7 +189,7 @@
 
                     </p>
             </div>
-         
+        
        
     </div>
 

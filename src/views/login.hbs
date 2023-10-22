@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Project</title>
+
+    <!-- Css Link -->
+
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Font Link -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+     <!--navbar  -->
+     <navbar>
+        <div class="container-navbar">
+
+            <div class="left-section">
+                <div>
+                    <a href="/">
+                          <div class="logo-bg">
+                            <div class="logo">dianH.dev</div>
+                        </div>
+                    </a>
+                    
+                    
+                </div>
+                
+            </div>
+
+            <div class="right-section">
+            
+                    {{!-- <ul >
+                        <li><a href="/">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="/myproject">My Project</a></li>
+                        <li><a href="/testimoni">Testimonial</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul> --}}
+            
+                {{!-- <div>
+                    <img src="img/hamburger.svg" class="hamburger-toggle">
+                </div> --}}
+                    
+                   
+            </div>
+        </div>
+    </navbar>
+
+    <!-- Navbar End  -->
+    <!-- Contain section -->
+        <!-- Form Input Project -->
+
+<div class="section-one">
+
+   
+
+    <div class="container">
+                
+        <div class="form-title fw-bold">
+            <span>LOGIN</span>
+        </div>
+        {{#if messages.danger}}
+        <div class="alert alert-danger rounded-1 text-center text-capitalize d-flex align-items-center justify-content-center gap-2" role="alert"
+        style="
+        width: 100%;
+        height:30px;
+        font-size: 12px;
+        ">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+          </svg>
+                {{messages.danger}}
+        </div>
+        {{/if}}
+        <div class="form-container">
+            <form method="post" action="/userlogin">
+
+                <div>
+                    <label for="nama-project">Email</label>
+                </div>
+                <div class="project-name">
+                    <input type="text" id="nama-project" name="email">
+                </div>
+
+                 <div>
+                    <label for="nama-project">Password</label>
+                </div>
+                <div class="project-name">
+                    <input type="password" id="password" name="password">
+                </div>
+                
+
+                    <div class="submit-button-container">
+                        <div><button  type="submit" class="submit-button" 
+                            >Login</button></div>
+                    </div>
+            </form>
+        </div>
+        <div>
+            <p style="
+            font-size:13px;
+            margin-top:25px;
+
+            ">Belum punya akun? <a href="/register" style="
+            text-decoration: none;
+            color:#fe4e30;
+            font-size:13px;
+            ">Daftar</a></p>
+        </div>
+    </div>
+
+    <div class="container2" style="
+
+    ">
+        <img src="https://img.freepik.com/free-vector/postponed-concept-flat-design_52683-35644.jpg?size=626&ext=jpg&uid=R119081331&ga=GA1.1.73954028.1696325208&semt=ais"
+        width="40%" style="
+        margin-top: 30px;
+        position:absolute;
+        right:580px;
+        
+        
+        ">
+    </div>
+
+     <div class="container2" style="
+
+    ">
+        <img src="https://img.freepik.com/free-vector/postponed-concept-flat-design_52683-35644.jpg?size=626&ext=jpg&uid=R119081331&ga=GA1.1.73954028.1696325208&semt=ais"
+        width="40%" style="
+        margin-top: 30px;
+        position:absolute;
+        right:200px;
+         transform: scaleX(-1);
+        
+        
+        ">
+    </div>
+</div>
+
+
+    
+
+<script src="script/responsive.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
